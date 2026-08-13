@@ -1,0 +1,6 @@
+Date,Chassis,Component,Issue,Resolution,Technician
+2024-01-14,Scout Chassis,Left plasma thruster,Intermittent fault under cold conditions,Replaced thruster coil and resealed housing,Ratchet
+2024-02-03,Vanguard Chassis,Chestplate servo,Minor calibration drift after a high-G maneuver,Recalibrated via the diagnostic dock,Commander
+2024-02-20,Heavy Assault Chassis,Transformation Cog,Transformation lag of 0.4 seconds above spec,Applied firmware patch; lag reduced to 0.1 seconds,Optimus (automated)
+2024-03-02,Scout Chassis,Left plasma thruster,Repeat fault flagged again after coil replacement,Escalated to full thruster housing replacement,Ratchet
+2024-03-19,Energon Core (chest unit),Power regulation circuit,Output fluctuation of plus or minus 2 percent under sustained load,Replaced the regulation circuit board,Commander

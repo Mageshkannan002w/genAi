@@ -1,0 +1,26 @@
+# Optimus Combat Strategy & Tactical Notes
+# Chunking note: RECURSIVE / STRUCTURE-AWARE chunks. These are procedures with ordered
+# steps - a generic fixed-size splitter would risk cutting a step mid-sentence and
+# silently dropping a threshold value, exactly like the course's ingestion mistake story.
+
+Procedure: Insecticon Swarm Engagement (validated during the Darkmount incident)
+Step 1: Divert non-essential power (holographic projectors, base climate control) to primary weapon systems.
+Step 2: Prioritize target selection by proximity to organic lifeforms first, then by Insecticon weapon class.
+Step 3: If swarm count exceeds 12 simultaneous contacts, request vanguard backup rather than engaging solo.
+Step 4: Maintain a minimum 15% Energon reserve at all times for emergency thruster burst.
+Step 5: If Energon Core output drops below 20% mid-engagement, disengage and return to The Ark - do not
+attempt to finish the fight on reserve power.
+
+Procedure: Decepticon Warlord Engagement (validated against the Megatron incident debrief)
+Step 1: Establish target's primary weapon signature and attack pattern before closing distance.
+Step 2: Keep a minimum 3-second thruster reserve for evasive maneuvering at all times.
+Step 3: If target demonstrates an unknown dark Energon capability, retreat to observation range and
+reassess rather than continuing to press the engagement blind.
+Step 4: Loop in any nearby allied units (Teletraan-monitored assets) before escalating to a
+high-risk maneuver.
+
+Procedure: Emergency Extraction (Commander incapacitated or chassis critically damaged)
+Step 1: Immediately switch to autopilot return-to-base, overriding manual control.
+Step 2: Broadcast a distress signal on the private Autobot frequency and to any allied unit in range.
+Step 3: If altitude is above 500 meters and thruster failure is detected, deploy the emergency
+stasis pod system before attempting any other recovery action.

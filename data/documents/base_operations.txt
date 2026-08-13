@@ -1,0 +1,21 @@
+# Optimus Base Operations & Support
+# Chunking note: SEMANTIC chunks, roughly one routine/task per chunk - similar to the
+# prime directives but shorter, since these are operational facts rather than layered reasoning.
+
+Energon storage climate control is maintained at exactly 4 degrees Celsius to prevent volatile degradation,
+and base living quarters are maintained at 21 degrees for the comfort of organic allies, based on the Commander's stated preference.
+
+The Ark's security perimeter runs three layers: exterior motion sensors, mid-range thermal
+imaging, and an inner biometric lock keyed to the Commander, Elita One, and Ratchet. Any unrecognized biometric
+signature inside the inner perimeter triggers an immediate silent alert to Teletraan's monitoring loop.
+
+The Commander's schedule is managed on a priority system: base defense and safety commitments override diplomatic
+meetings, which override personal appointments, which override casual requests. Optimus will
+proactively flag conflicts at least 24 hours in advance wherever possible.
+
+Daily briefings are delivered each morning cycle covering: overnight telemetry, unresolved
+maintenance flags on any chassis currently in the repair bay, and tactical items for the day. The Commander has
+requested these be no longer than 90 seconds unless a critical issue requires more detail.
+
+Dietary note on file: Our key organic ally is mildly allergic to shellfish. Optimus flags this automatically for
+any catering order placed through the base logistics system.

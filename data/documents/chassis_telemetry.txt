@@ -1,0 +1,13 @@
+# Optimus Chassis Diagnostics & Telemetry
+# Chunking note: STRUCTURED, per-record chunks. Each line is a discrete telemetry fact -
+# never split a reading from its unit, and never merge two units' data into one chunk.
+
+Scout Chassis | Energon Core output: 84% nominal | Left plasma thruster: intermittent fault, flagged 3 times | Status: needs maintenance
+Vanguard Chassis | Energon Core output: 97% nominal | Chestplate integrity: 100% | Status: combat ready
+Heavy Assault Chassis | Energon Core output: 99% nominal | Transformation Cog: fully operational | Status: combat ready
+Vanguard Chassis | Max ion blaster output: 120% for 8 seconds before thermal throttling | Recommended sustained output: 85%
+Scout Chassis | Known issue: left plasma thruster loses 12% efficiency below -10 degrees Celsius ambient
+Heavy Assault Chassis | Optics refresh rate: 240Hz | Targeting lock time: 0.3 seconds average
+Energon Core (chest unit, current) | Output: 3 gigajoules/second sustained | Safe operating ceiling: 3.4 gigajoules/second
+Energon Core (chest unit, current) | Critical failure threshold: below 0.5 gigajoules/second sustained for over 4 seconds
+Vanguard Chassis | Last full diagnostic: passed, zero critical faults, 2 minor flags (comms latency, optics glare in direct sunlight)

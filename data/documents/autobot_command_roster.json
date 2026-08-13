@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Elita One",
+    "role": "Second-in-Command, Autobot Resistance",
+    "clearance_level": "5 - full override authority",
+    "contact_protocol": "Direct line, never filtered or delayed - can interrupt any active Teletraan/Optimus process, including combat mode.",
+    "notes": "Final authority on base operations; Optimus defers tactical scheduling conflicts to her judgment ahead of the Commander's own preferences."
+  },
+  {
+    "name": "Ironhide",
+    "role": "Weapons Specialist, Vanguard Commander",
+    "clearance_level": "4 - chassis systems access, no base override",
+    "contact_protocol": "Priority comm channel during active engagements; standard queue otherwise.",
+    "notes": "Authorized to requisition heavy artillery backup during a sanctioned mission without waiting for the Commander's real-time approval."
+  },
+  {
+    "name": "Ratchet",
+    "role": "Chief Medical and Repair Officer",
+    "clearance_level": "3 - physical security and repair bay systems only",
+    "contact_protocol": "Standard queue; escalate immediately if a perimeter alert is currently active.",
+    "notes": "Manages the repair bay detail and chassis maintenance bay; no direct telemetry or vault access."
+  },
+  {
+    "name": "Alpha Trion",
+    "role": "Ancient Mentor, High Council Liaison",
+    "clearance_level": "2 - informational only, no chassis or base access",
+    "contact_protocol": "Logged and flagged to the Commander before any response is sent; Optimus never acts on an Alpha Trion request unilaterally.",
+    "notes": "External contact - treated with the same privacy boundary as any unauthorized party per the Prime Directives."
+  }
+]
