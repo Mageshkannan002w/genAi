@@ -131,16 +131,16 @@ suits ──┬──< maintenance_events >──┬── technicians
 
 | Table | Columns | Rows seeded |
 |---|---|---|
-| `suits` | mark_name, status, power_core_pct, last_diagnostic_date | 6 |
+| `chassis` | chassis_class, status, energon_core_pct, last_diagnostic_date | 6 |
 | `technicians` | name, specialty, years_experience | 6 |
-| `maintenance_events` | suit, technician, date, component, issue, resolution, hours, cost | 30 |
-| `missions` | suit, date, location, threat_level, duration_min, outcome | 20 |
+| `maintenance_events` | chassis, technician, date, component, issue, resolution, hours, cost | 30 |
+| `campaigns` | chassis, date, location, threat_level, duration_min, outcome | 20 |
 
 Seed rows (`src/db/seed_data.py`) are hand-authored, not random, so every benchmark
 question in `sample_queries.md` has one verifiable correct answer — and a few facts (the
-Mark 42's left boot thruster being flagged 3 times) are kept consistent with
-`suit_diagnostics.txt`, so a curious intern can cross-check the structured and
-unstructured stories about the same suit.
+Scout Chassis's left boot thruster being flagged 3 times) are kept consistent with
+`chassis_diagnostics.txt`, so a curious developer can cross-check the structured and
+unstructured stories about the same chassis.
 
 **The NL2SQL pipeline** (`src/nl2sql/`), given a question:
 
@@ -163,7 +163,7 @@ readonly_engine.execute()   <- runs as the `optimus_readonly` Postgres role, whi
     │                          guard missed cannot write or drop anything, because the
     │                          role it executes as has no privilege to.
     ▼
-pipeline._synthesize_answer()   <- second LLM call turns the result rows into a
+pipeline._synthesize_answer()   <- second LLM call turns the result rows into an
                                     OPTIMUS-voiced answer, citing "structured fleet records"
 ```
 
@@ -175,21 +175,22 @@ back to the LLM for a corrected try before giving up gracefully.
 `src/core/agent.py` runs a hand-rolled, text-parsed ReAct loop (Thought → Action →
 Observation) against `src/core/tools.py`'s `TOOL_REGISTRY`:
 
-| Tool | Backing subsystem | Read-only? |
-|---|---|---|
-| `lookup_knowledge_base` | Vector KB (§2.1) | Yes |
-| `query_fleet_database` | Structured DB via NL2SQL (§2.2) | Yes |
-| `check_suit_status` | Vector KB, filtered to `suit_diagnostics` | Yes |
-| `view_action_log` | Episodic memory (§2.4) | Yes |
-| `recall_fact` | Long-term memory (§2.4) | Yes |
-| `send_alert`, `schedule_reminder` | Simulated actions | No (low-stakes, reversible) |
-| `remember_fact` | Long-term memory (§2.4) | No (low-stakes, reversible) |
+| Tool | Backing subsystem | Risk Level | Read-only? |
+|---|---|---|---|
+| `lookup_knowledge_base` | Vector KB (§2.1) | `none` | Yes |
+| `query_fleet_database` | Structured DB via NL2SQL (§2.2) | `none` | Yes |
+| `check_chassis_status` | Vector KB, filtered to `chassis_telemetry` | `none` | Yes |
+| `view_action_log` | Episodic memory (§2.4) | `none` | Yes |
+| `recall_fact` | Long-term memory (§2.4) | `none` | Yes |
+| `send_alert` | Simulated actions | `low` | No (low-stakes, reversible) |
+| `schedule_reminder` | Simulated actions | `low` | No (low-stakes, reversible) |
+| `remember_fact` | Long-term memory (§2.4) | `low` | No (low-stakes, reversible) |
 
 The two read-only lookup tools are the deliberate teaching contrast: `lookup_knowledge_base`
 for narrative/procedural questions, `query_fleet_database` for anything needing an exact
 number or a join — each tool's description is written precisely enough for the agent to
 pick correctly, and a query that needs both (e.g. "how many thruster repairs has the
-Mark 42 had, and does the combat doc say anything about flying with a degraded thruster?")
+Scout Chassis had, and does the combat doc say anything about flying with a degraded thruster?")
 will chain them in one turn. See `sample_queries.md` for a query crafted exactly for this.
 
 ### 2.4 Memory
@@ -231,7 +232,7 @@ optimus_demo/
 │   │   └── agent.py             # ReAct loop (Thought/Action/Observation)
 │   ├── db/
 │   │   ├── database.py          # admin engine + readonly engine (SQLAlchemy)
-│   │   ├── models.py            # Suit, Technician, MaintenanceEvent, Mission
+│   │   ├── models.py            # Chassis, Technician, MaintenanceEvent, Campaign
 │   │   └── seed_data.py         # hand-authored, deterministic seed rows
 │   ├── nl2sql/
 │   │   ├── schema_introspection.py  # builds prompt schema from live DB metadata
