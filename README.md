@@ -1,9 +1,9 @@
-# J.A.R.V.I.S. Demo — RAG, Structured-Data & Agentic AI, Open-Source Only
+# Autobot Command Demo — RAG, Structured-Data & Agentic AI, Open-Source Only
 
 > A production-shaped reference chatbot combining vector retrieval over multi-format
 > documents, a natural-language-to-SQL pipeline over a real relational database, and an
-> agentic ReAct loop that chooses between them — built for GoML's RAG & Agentic AI intern
-> training session, using J.A.R.V.I.S. as the running example.
+> agentic ReAct loop that chooses between them — built for GoML's RAG & Agentic AI training
+> session, using Optimus Prime & Autobot Command as the running theme.
 
 Everything runs **locally and open-source** — Ollama for the LLM, `sentence-transformers`
 for embeddings, Qdrant (embedded) for the vector DB, PostgreSQL (via Docker) for the
@@ -32,23 +32,23 @@ structured DB. No API keys, no cloud services, no cost.
 
 ## 1. Project Overview
 
-This chatbot answers questions about J.A.R.V.I.S.'s world — Tony Stark's suits, allies,
-protocols, and missions — by combining **two independent retrieval subsystems** plus an
+This chatbot answers questions about Optimus Prime's world — Autobot chassis, allies,
+Cybertronian protocols, and missions — by combining **two independent retrieval subsystems** plus an
 LLM, orchestrated either directly (RAG mode) or through an agent that picks tools for
 itself (Agentic mode):
 
 1. **Vector knowledge base** — 9 documents across 5 file formats (`.txt`, `.md`, `.json`,
    `.csv`, `.html`), each chunked with the strategy appropriate to its structure, embedded
    with `sentence-transformers`, indexed in Qdrant (embedded/local — no server needed).
-   Good for narrative, procedural, and personality knowledge.
-2. **Structured fleet-ops database** — a real PostgreSQL database (`suits`,
-   `technicians`, `maintenance_events`, `missions`) queried through a **natural-language-
+   Good for narrative, procedural, and operational knowledge.
+2. **Structured fleet-ops database** — a real PostgreSQL database (`chassis`,
+   `technicians`, `maintenance_events`, `campaigns`) queried through a **natural-language-
    to-SQL pipeline**: the LLM writes a query, a safety guard and a least-privilege DB role
    both gate it, and a second LLM call turns the result rows into a spoken answer. Good
    for anything that needs an exact count, sum, average, or join — the kind of question a
    vector search can only approximate.
-3. **Claude — no, Ollama** running any local open model, synthesizing retrieved
-   context (from either or both subsystems) into a OPTIMUS-voiced answer.
+3. **Ollama** running any local open model, synthesizing retrieved
+   context (from either or both subsystems) into an OPTIMUS-voiced answer.
 
 **Two modes, switchable from the sidebar:**
 - **RAG mode** — OPTIMUS answers questions grounded in the vector knowledge base only. He
@@ -372,12 +372,12 @@ curl http://localhost:8000/health
 
 curl -s -X POST http://localhost:8000/api/v1/sql/query \
   -H "Content-Type: application/json" \
-  -d '{"question": "How many times has the Mark 42 needed left boot thruster repairs?"}' \
+  -d '{"question": "How many times has the Scout Chassis needed left boot thruster repairs?"}' \
   | python3 -m json.tool
 
 curl -s -X POST http://localhost:8000/api/v1/chat/agent \
   -H "Content-Type: application/json" \
-  -d '{"session_id": "demo-1", "query": "How many maintenance events has the Mark 45 had, and what did they cost in total?"}' \
+  -d '{"session_id": "demo-1", "query": "How many maintenance events has the Vanguard Chassis had, and what did they cost in total?"}' \
   | python3 -m json.tool
 ```
 
